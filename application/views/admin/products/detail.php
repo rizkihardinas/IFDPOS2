@@ -3,47 +3,31 @@
     <div class="col-12">
         <div class="card-box">
             <div class="row">
-                <div class="col-xl-5">
-
+                <div class="col-md-5">
                     <div class="tab-content pt-0">
-                        <div class="tab-pane active show" id="product-1-item">
-                            <img src="<?php echo base_url('assets/images/products/product-9.jpg') ?>" class="img-fluid mx-auto d-block rounded">
+                        <?php foreach ($image as $image): ?>
+                        <div class="tab-pane <?php if ($image['priority'] == 0){
+                            echo 'active show';
+                        }?>" id="product-<?php echo $image['priority']; ?>-item">
+                            <img src="<?php echo base_url('uploads/images/products/'.$image['path']) ?>" class="img-fluid mx-auto d-block rounded">
                         </div>
-                        <div class="tab-pane" id="product-2-item">
-                            <img src="<?php echo base_url('assets/images/products/product-10.jpg') ?>" alt="" class="img-fluid mx-auto d-block rounded">
-                        </div>
-                        <div class="tab-pane" id="product-3-item">
-                            <img src="<?php echo base_url('assets/images/products/product-11.jpg') ?>" alt="" class="img-fluid mx-auto d-block rounded">
-                        </div>
-                        <div class="tab-pane" id="product-4-item">
-                            <img src="<?php echo base_url('assets/images/products/product-12.jpg') ?>" alt="" class="img-fluid mx-auto d-block rounded">
-                        </div>
+                        <?php endforeach ?>
+                        
                     </div>
 
                     <ul class="nav nav-pills nav-justified">
-                        <li class="nav-item">
-                            <a href="#product-1-item" data-toggle="tab" aria-expanded="false" class="nav-link product-thumb active show">
-                                <img src="<?php echo base_url('assets/images/products/product-9.jpg"') ?> alt="" class="img-fluid mx-auto d-block rounded">
+                        <?php foreach ($images as $images): ?>
+                            <li class="nav-item">
+                            <a href="#product-<?php echo $images['priority']; ?>-item" data-toggle="tab" aria-expanded="false" class="nav-link product-thumb">
+                                <img src="<?php echo base_url('uploads/images/products/'.$images['path']) ?>" class="img-fluid mx-auto d-block rounded">
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#product-2-item" data-toggle="tab" aria-expanded="true" class="nav-link product-thumb">
-                                <img src="<?php echo base_url('assets/images/products/product-10.jpg') ?>" alt="" class="img-fluid mx-auto d-block rounded">
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#product-3-item" data-toggle="tab" aria-expanded="false" class="nav-link product-thumb">
-                                <img src="<?php echo base_url('assets/images/products/product-11.jpg') ?>" alt="" class="img-fluid mx-auto d-block rounded">
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#product-4-item" data-toggle="tab" aria-expanded="false" class="nav-link product-thumb">
-                                <img src="<?php echo base_url('assets/images/products/product-12.jpg') ?>" alt="" class="img-fluid mx-auto d-block rounded">
-                            </a>
-                        </li>
+                        <?php endforeach ?>
+                        
+                        
                     </ul>
                 </div> <!-- end col -->
-                <div class="col-xl-7">
+                <div class="col-md-7">
                     <div class="pl-xl-3 mt-3 mt-xl-0">
                         <a href="#" class="text-primary"><?php echo $products['division_name'] ?> > <?php echo $products['category_name'] ?> > <?php echo $products['subcategory_name'] ?></a>
                         <h4 class="mb-3"><?php echo $products['name'] ?></h4>
