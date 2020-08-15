@@ -36,12 +36,12 @@
                             <span class="d-none d-sm-inline">Bank Account</span>
                         </a>
                     </li>
-                    <!-- <li class="nav-item">
+                    <li class="nav-item">
                         <a href="#job_history" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
                             <i class="mdi mdi-bank mr-1"></i>
                             <span class="d-none d-sm-inline">Job History</span>
                         </a>
-                    </li> -->
+                    </li>
                     <li class="nav-item">
                         <a href="#finish-2" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
                             <i class="mdi mdi-checkbox-marked-circle-outline mr-1"></i>
@@ -262,7 +262,7 @@
                             </div> <!-- end col -->
                         </div> <!-- end row -->
                     </div>
-                    <!-- <div class="tab-pane" id="job_history">
+                    <div class="tab-pane" id="job_history">
                         <div class="row">
                             <div class="col-12">
                                 <button class="btn btn-success" id="addJob"><i class="mdi mdi-add"></i> Add</button>
@@ -286,7 +286,7 @@
                                 
                             </div> <!-- end col -->
                         </div> <!-- end row -->
-                    </div> 
+                    </div>
                     <div class="tab-pane" id="finish-2">
                         <div class="row">
                             <div class="col-12">
@@ -501,12 +501,28 @@
         var start_date_job_hitory = $('#start_date_job_hitory').val();
         var end_date_job_hitory = $('#end_date_job_hitory').val();
         var reason_job_hitory = $('#reason_job_hitory').val();
-        var html = 
+        var data = {
+            company_job_hitory:company_job_hitory,
+            department_job_hitory:department_job_hitory,
+            designation_job_hitory:designation_job_hitory,
+            start_date_job_hitory:start_date_job_hitory,
+            end_date_job_hitory:end_date_job_hitory,
+            reason_job_hitory:reason_job_hitory
+        };
+        $.ajax({
+            data: data,
+                type:'POST',
+                url     : '<?php echo site_url('Employee/addJobHistory/'); ?>',
+                success : function(response)
+                {
+                    alert(response);
+                }
+        })
+        // var html = 
 
-        '<tr><td>'+company_job_hitory+'</td><td>'+department_job_hitory+'</td><td>'+designation_job_hitory+'</td><td>'+start_date_job_hitory+'</td><td>'+end_date_job_hitory+'</td><td>'+reason_job_hitory+'</td></tr>';
-        table.append(html);
+        // '<tr><td>'+company_job_hitory+'</td><td>'+department_job_hitory+'</td><td>'+designation_job_hitory+'</td><td>'+start_date_job_hitory+'</td><td>'+end_date_job_hitory+'</td><td>'+reason_job_hitory+'</td></tr>';
+        // table.append(html);
         $('#modal').modal('toggle');
 
     });
-    $(document).ready(function(){"use strict";$("#basicwizard").bootstrapWizard(),$("#progressbarwizard").bootstrapWizard({onTabShow:function(t,r,a){var o=(a+1)/r.find("li").length*100;$("#progressbarwizard").find(".bar").css({width:o+"%"})}}),$("#btnwizard").bootstrapWizard({nextSelector:".button-next",previousSelector:".button-previous",firstSelector:".button-first",lastSelector:".button-last"}),$("#rootwizard").bootstrapWizard({onNext:function(t,r,a){var o=$($(t).data("targetForm"));if(o&&(o.addClass("was-validated"),!1===o[0].checkValidity()))return event.preventDefault(),event.stopPropagation(),!1}})});
 </script>
