@@ -160,7 +160,7 @@
 <div class="row">
     <div class="col-12">
         <div class="text-center mb-3">
-            <?php echo anchor('Admin/list_product','Back','class="btn w-sm btn-light waves-effect"') ?>
+            <?php echo anchor('Products/products','Back','class="btn w-sm btn-light waves-effect"') ?>
             <input type="submit" class="btn w-sm btn-success waves-effect waves-light" value="Save">
             <input type="reset" class="btn w-sm btn-danger waves-effect waves-light"  value="Cancel" />
         </div>
