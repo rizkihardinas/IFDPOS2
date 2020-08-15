@@ -138,37 +138,38 @@
         });
         $(document).on('click','#save',function(){
             var id = $(this).attr('idnya');
-            var charge = $('input[""]').checked();
+            var charge = $('input[name=charge]:checked').val();
             var name = $('#name').val();
             var value = {
                 id:id,
                 name:name
             };
-            Swal.fire({
-                title:"Apa anda yakin?",
-                text:"Ada akan disimpan!",
-                type:"warning",
-                showCancelButton:!0,
-                confirmButtonColor:"#3085d6",
-                cancelButtonColor:"#d33",
-                confirmButtonText:"Ya, Simpan saja!"
-            }).then(function(t){
-                $.ajax({
-                    url:'<?php echo base_url('Api/insertMaster/'.str_replace('_', '', $this->uri->segment(2)).'') ?>',
-                    type:'POST',
-                    data:value,
-                    success:function(data){
-                        var json = jQuery.parseJSON(data);
-                        if (json.response == 200) {
-                            Swal.fire("Berhasil!",json.message,"success");
-                            var table = $('#table').DataTable();
-                            table.ajax.reload(null,false);
-                            $('#modal').modal('hide');
-                        }
-                    }
-                });
+            alert(charge);
+            // Swal.fire({
+            //     title:"Apa anda yakin?",
+            //     text:"Ada akan disimpan!",
+            //     type:"warning",
+            //     showCancelButton:!0,
+            //     confirmButtonColor:"#3085d6",
+            //     cancelButtonColor:"#d33",
+            //     confirmButtonText:"Ya, Simpan saja!"
+            // }).then(function(t){
+            //     $.ajax({
+            //         url:'<?php echo base_url('Api/insertMaster/'.str_replace('_', '', $this->uri->segment(2)).'') ?>',
+            //         type:'POST',
+            //         data:value,
+            //         success:function(data){
+            //             var json = jQuery.parseJSON(data);
+            //             if (json.response == 200) {
+            //                 Swal.fire("Berhasil!",json.message,"success");
+            //                 var table = $('#table').DataTable();
+            //                 table.ajax.reload(null,false);
+            //                 $('#modal').modal('hide');
+            //             }
+            //         }
+            //     });
                 
-            });
+            // });
             
         });
     });
