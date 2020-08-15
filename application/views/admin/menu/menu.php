@@ -1,4 +1,4 @@
-
+<button id="addMenu" class="btn btn-primary waves waves-effect"><i class="fe fe-add"></i> Add Menu</button>
 <div class="row">
     <div class="col-md-12">
         <div class="card">
