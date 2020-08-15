@@ -47,6 +47,10 @@
         
         <!-- App js-->
         <script src="<?php echo base_url('assets/plugin/dropify/dropify.min.js') ?>"></script>
+        <script src="<?php echo base_url('assets/plugin/bootstrap-colorpicker/bootstrap-colorpicker.min.js') ?>"></script>
         <script src="<?php echo base_url('assets/js/app.min.js') ?>"></script>
+        <script type="text/javascript">
+            !function(i){"use strict";var e=function(){};e.prototype.init=function(){i("#basic-colorpicker").colorpicker(),i("#hexa-colorpicker").colorpicker({format:"auto"}),i("#component-colorpicker").colorpicker({format:null}),i("#horizontal-colorpicker").colorpicker({horizontal:!0}),i("#inline-colorpicker").colorpicker({color:"#DD0F20",inline:!0,container:!0})},i.FormPickers=new e,i.FormPickers.Constructor=e}(window.jQuery),function(e){"use strict";window.jQuery.FormPickers.init()}();
+        </script>
     </body>
 </html>
