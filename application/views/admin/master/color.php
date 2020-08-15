@@ -39,8 +39,8 @@
                             <input type="text" class="form-control" id="name" placeholder="White">
                         </div>
                         <div class="form-group">
-                            <label for="hex" class="control-label">Hex Color</label>
-                            <input type="text" class="form-control" id="hex" placeholder="#FFFFF">
+                            <label for="hexa-colorpicker" class="control-label">Hex Color</label>
+                            <input type="text" class="form-control colorpicker-element" id="hexa-colorpicker" data-colorpicker-id="2" data-original-title title placeholder="#FFFFF">
                         </div>
                     </div>
                 </div>
