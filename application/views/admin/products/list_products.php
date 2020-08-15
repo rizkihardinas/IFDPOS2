@@ -60,7 +60,7 @@
             <div class="card-box product-box">
 
                 <div class="product-action">
-                    <a href="javascript: void(0);" class="btn btn-success btn-xs waves-effect waves-light"><i class="mdi mdi-pencil"></i></a>
+                    <?php echo anchor('Products/products/edit/'.$products['id'],'<i class="mdi mdi-pencil"></i>','class="btn btn-success btn-xs waves-effect waves-light"') ?>
                     <a href="javascript: void(0);" class="btn btn-danger btn-xs waves-effect waves-light"><i class="mdi mdi-close"></i></a>
                 </div>
 
